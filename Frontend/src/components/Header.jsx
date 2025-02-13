@@ -1,8 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"
 import PinEntryModal from "./PinEntryModal"
 
 const Header = () => {
@@ -19,49 +18,29 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="text-2xl font-bold">SecureBank</div>
           <div className="hidden md:flex space-x-4">
-            <Link href="/" className="hover:text-blue-300">
-              Home
-            </Link>
-            <Link href="/about" className="hover:text-blue-300">
-              About Us
-            </Link>
-            <Link href="/services" className="hover:text-blue-300">
-              Services
-            </Link>
-            <button onClick={openPinModal} className="hover:text-blue-300">
-              Online Banking
-            </button>
-            <Link href="/contact" className="hover:text-blue-300">
-              Contact Us
-            </Link>
-            <Link href="/faq" className="hover:text-blue-300">
-              FAQ
-            </Link>
+            <a href="/" className="hover:text-blue-300">Home</a>
+            <a href="/about" className="hover:text-blue-300">About Us</a>
+            <a href="/services" className="hover:text-blue-300">Services</a>
+            <button onClick={openPinModal} className="hover:text-blue-300">Online Banking</button>
+            <a href="/contact" className="hover:text-blue-300">Contact Us</a>
+            <a href="/faq" className="hover:text-blue-300">FAQ</a>
           </div>
           <div className="md:hidden">
-            <button onClick={toggleMenu}>{isMenuOpen ? <X /> : <Menu />}</button>
+            <button onClick={toggleMenu}>
+              {isMenuOpen ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
+            </button>
           </div>
         </div>
         {isMenuOpen && (
           <div className="mt-4 md:hidden">
-            <Link href="/" className="block py-2 hover:text-blue-300">
-              Home
-            </Link>
-            <Link href="/about" className="block py-2 hover:text-blue-300">
-              About Us
-            </Link>
-            <Link href="/services" className="block py-2 hover:text-blue-300">
-              Services
-            </Link>
+            <a href="/" className="block py-2 hover:text-blue-300">Home</a>
+            <a href="/about" className="block py-2 hover:text-blue-300">About Us</a>
+            <a href="/services" className="block py-2 hover:text-blue-300">Services</a>
             <button onClick={openPinModal} className="block py-2 hover:text-blue-300 w-full text-left">
               Online Banking
             </button>
-            <Link href="/contact" className="block py-2 hover:text-blue-300">
-              Contact Us
-            </Link>
-            <Link href="/faq" className="block py-2 hover:text-blue-300">
-              FAQ
-            </Link>
+            <a href="/contact" className="block py-2 hover:text-blue-300">Contact Us</a>
+            <a href="/faq" className="block py-2 hover:text-blue-300">FAQ</a>
           </div>
         )}
       </nav>
@@ -71,4 +50,3 @@ const Header = () => {
 }
 
 export default Header
-

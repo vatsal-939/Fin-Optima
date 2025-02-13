@@ -1,5 +1,4 @@
-import Link from "next/link"
-import { Facebook, Twitter, Linkedin } from "lucide-react"
+import { FaFacebook, FaTwitter, FaLinkedin, FaGooglePlay, FaApple } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -10,19 +9,19 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/privacy" className="hover:text-blue-300">
+                <a href="/privacy" className="hover:text-blue-300">
                   Privacy Policy
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-blue-300">
+                <a href="/terms" className="hover:text-blue-300">
                   Terms & Conditions
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/careers" className="hover:text-blue-300">
+                <a href="/careers" className="hover:text-blue-300">
                   Careers
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -32,9 +31,9 @@ const Footer = () => {
               <li>Phone: 1-800-123-4567</li>
               <li>Email: support@securebank.com</li>
               <li>
-                <Link href="/chat" className="hover:text-blue-300">
+                <a href="/chat" className="hover:text-blue-300">
                   Live Chat
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -42,13 +41,13 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-blue-300">
-                <Facebook />
+                <FaFacebook size={24} />
               </a>
               <a href="#" className="hover:text-blue-300">
-                <Twitter />
+                <FaTwitter size={24} />
               </a>
               <a href="#" className="hover:text-blue-300">
-                <Linkedin />
+                <FaLinkedin size={24} />
               </a>
             </div>
           </div>
@@ -56,11 +55,19 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Download Our App</h3>
             <p className="mb-2">Bank on the go with our mobile app</p>
             <div className="flex space-x-2">
-              <a href="#" className="bg-white text-blue-900 px-4 py-2 rounded">
-                App Store
+              <a
+                href="#"
+                className="bg-white text-blue-900 px-4 py-2 rounded flex items-center space-x-2 hover:bg-gray-200"
+              >
+                <FaApple size={20} />
+                <span>App Store</span>
               </a>
-              <a href="#" className="bg-white text-blue-900 px-4 py-2 rounded">
-                Google Play
+              <a
+                href="#"
+                className="bg-white text-blue-900 px-4 py-2 rounded flex items-center space-x-2 hover:bg-gray-200"
+              >
+                <FaGooglePlay size={20} />
+                <span>Google Play</span>
               </a>
             </div>
           </div>
@@ -70,8 +77,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
-
+export default Footer;

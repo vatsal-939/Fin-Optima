@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useState } from "react";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 const offers = [
   {
@@ -19,18 +19,18 @@ const offers = [
     description: "5% extra cashback on all festive purchases",
     bgColor: "bg-purple-100",
   },
-]
+];
 
 const SpecialOffers = () => {
-  const [currentOffer, setCurrentOffer] = useState(0)
+  const [currentOffer, setCurrentOffer] = useState(0);
 
   const nextOffer = () => {
-    setCurrentOffer((prev) => (prev + 1) % offers.length)
-  }
+    setCurrentOffer((prev) => (prev + 1) % offers.length);
+  };
 
   const prevOffer = () => {
-    setCurrentOffer((prev) => (prev - 1 + offers.length) % offers.length)
-  }
+    setCurrentOffer((prev) => (prev - 1 + offers.length) % offers.length);
+  };
 
   return (
     <section className="py-16">
@@ -48,19 +48,18 @@ const SpecialOffers = () => {
             onClick={prevOffer}
             className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
           >
-            <ChevronLeft />
+            <HiChevronLeft size={24} />
           </button>
           <button
             onClick={nextOffer}
             className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
           >
-            <ChevronRight />
+            <HiChevronRight size={24} />
           </button>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default SpecialOffers
-
+export default SpecialOffers;
